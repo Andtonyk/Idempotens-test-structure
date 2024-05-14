@@ -11,7 +11,8 @@ Admin Powershellin sijainnin ollessa halutussa kohde kansiossa, voidaan alustaa 
     vagrant init debian/bullseye64
 
 Kohde kansioon muodostuvaa Vagratfileä voidaan muokata joko Admin Powershellistä tai graafisen käyttöliittymän kautta valitussa editorissa. Tässä graafisen käyttöliittymän kautta valittu editori on nopeampi.
-Käytetään Tero Karvisen muodostamaa esimerkkiä uuden Vagrantfilen pohjana.
+Käytetään Tero Karvisen muodostamaa esimerkkiä uuden Vagrantfilen pohjana. Tämä rakenne muodostaa kolme konetta, yhden isännän (tmaster) ja kaksi alaista (t001 sekä t002).
+Muodostettavat koneet ajetaan suoraan isäntä/alainen rakenteellisiksi. Manuaalinen esimerkki tämän toteuttamisesta löytyy repositiosta: tähän sen repo esimerkki
 
     # -*- mode: ruby -*-
     # vi: set ft=ruby :
