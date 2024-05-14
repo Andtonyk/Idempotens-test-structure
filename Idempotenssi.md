@@ -62,3 +62,16 @@ Kun uudet koneet ovat muodostuneet, voidaan niihin kirjautua.
 Esimerkkinä käytetty koodi muodostaa koneet nimiltä: t001, t002 ja tmaster.
 
     vagrant ssh halutun_koneen_nimi
+
+Muodostetussa Vagrantfilessä isäntä/alainen suhde on muodostettu osana toteutusta, joten tässä tapauksessa voimme kirjautua sisään suoraan isäntään
+
+    vagrant ssh tmaster
+
+Tämän jälkeen voimme hyväksyä odottavat alaiset. Muista vahvistaa listatut koneet lisäyksessä syöttämällä y + enter.
+
+    sudo salt-key -A
+
+Muodostuksen onnistumista voi testata millä tahansa komennolla, jossa kutsutaan alaisia.
+
+sudo salt '*' cnd.run 'whoami'
+sudo salt '*' test.ping
