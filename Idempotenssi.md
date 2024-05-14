@@ -98,3 +98,7 @@ Tämä voidaan toteuttaa vaikka asentamalla alaisille ohjelmia...
 
     sudo salt '*' state.single service.dead ohjelman_nimi
     sudo salt '*' state.single service.dead apache2
+
+Halutessasi voit poistaa muodostetut koneet, jos ei ole enempää testattavaa tai koneita ei enää tarvita.
+
+    vagrant destroy
