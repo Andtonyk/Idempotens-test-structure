@@ -10,7 +10,7 @@ Admin Powershellin sijainnin ollessa halutussa kohde kansiossa, voidaan alustaa 
 
     vagrant init debian/bullseye64
 
-Muodostuvaa Vagratfileä voidaan muokata joko Admin Powershellistä tai graafisen käyttöliittymän kautta valitussa editorissa. Tässä graafisen käyttöliittymän kautta valittu editori on nopeampi.
+Kohde kansioon muodostuvaa Vagratfileä voidaan muokata joko Admin Powershellistä tai graafisen käyttöliittymän kautta valitussa editorissa. Tässä graafisen käyttöliittymän kautta valittu editori on nopeampi.
 Käytetään Tero Karvisen muodostamaa esimerkkiä uuden Vagrantfilen pohjana.
 
     # -*- mode: ruby -*-
@@ -52,3 +52,12 @@ Käytetään Tero Karvisen muodostamaa esimerkkiä uuden Vagrantfilen pohjana.
 		    tmaster.vm.hostname = "tmaster"
 	    end
     end
+
+Tämän jälkeen voidaan Admin Powershellillä alustaa Vagrantfilellä muodostetut käyttäjät VM:ään aktiivisiksi, uusiksi koneiksi. Tässä saattaa mennä useitakin minuutteja, varsinkin jos koneita on monta.
+
+    vagrant up
+
+Kun uudet koneet ovat muodostuneet, voidaan niihin kirjautua. 
+Esimerkkinä käytetty koodi muodostaa koneet nimiltä: t001, t002 ja tmaster.
+
+    vagrant ssh halutun_koneen_nimi
