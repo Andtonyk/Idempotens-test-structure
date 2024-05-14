@@ -73,7 +73,28 @@ Tämän jälkeen voimme hyväksyä odottavat alaiset. Muista vahvistaa listatut 
 
 Muodostuksen onnistumista voi testata millä tahansa komennolla, jossa kutsutaan alaisia.
 
-    sudo salt '*' cnd.run 'whoami'
+    sudo salt '*' cmd.run 'whoami'
     sudo salt '*' test.ping
 
+Jos alaiset vastaavat, voidaan yhteyttä käyttä esim. tietojen keräämiseen. Pelkkä grains.items antaa erittäin paljon tietoa, joten hakua on hyvä rajata.
 
+    sudo salt '*' grains.items
+    sudo salt '*' grains.item osfinger ipv4
+
+Kun isäntä/alainen yhteys on todettu toimivaksi, voidaan aloittaa idempotenttiin johtavien toimien tekeminen, joka tarkoittaa muutoksien tekemistä ja niiden toteutumisen varmistamista (Eli komennon toiseen kertaan totettamista). 
+Tämä voidaan toteuttaa vaikka asentamalla alaisille ohjelmia... 
+
+    sudo salt '*' state.single pkg.installed ohjelman_nimi
+    sudo salt '*' state.single pkg.installed apache2
+    sudo salt '*' state.single pkg.installed micro
+
+
+...Tarkistamalla asennettujen ohjelmien tila...
+
+    sudo salt '*' state.single service.running ohjelman_nimi
+    sudo salt '*' state.single service.running apache2
+
+...Tai keskeyttämällä ohjelman toiminta etänä.
+
+    sudo salt '*' state.single service.dead ohjelman_nimi
+    sudo salt '*' state.single service.dead apache2
