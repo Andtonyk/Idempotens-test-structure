@@ -1,10 +1,13 @@
-Muodosta haluttuun kansiorakenteeseen polku, tämä onnistuu käyttäen Windowsin graafista käyttöliittymää tai Admin Powerhellissä. 
+Muodosta haluttuun kansiorakenteeseen polku, tämä onnistuu käyttäen Windowsin graafista käyttöliittymää tai Admin Powerhellissä.
+
     mkdir C:/Users/käyttäjä/Kohde_kansio
 
 Kun haluttu kohde kansio on olemassa, voidaan siihen siirtyä Admin Powershellissä.
+
     Set-Location C:/Users/käyttäjä/Kohde_kansio
 
 Admin Powershellin sijainnin ollessa halutussa kohde kansiossa, voidaan alustaa Vagrant
+
     vagrant init debian/bullseye64
 
 Muodostuvaa Vagratfileä voidaan muokata joko Admin Powershellistä tai graafisen käyttöliittymän kautta valitussa editorissa. Tässä graafisen käyttöliittymän kautta valittu editori on nopeampi.
