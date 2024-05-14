@@ -73,5 +73,7 @@ Tämän jälkeen voimme hyväksyä odottavat alaiset. Muista vahvistaa listatut 
 
 Muodostuksen onnistumista voi testata millä tahansa komennolla, jossa kutsutaan alaisia.
 
-sudo salt '*' cnd.run 'whoami'
-sudo salt '*' test.ping
+    sudo salt '*' cnd.run 'whoami'
+    sudo salt '*' test.ping
+
+
