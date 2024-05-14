@@ -51,4 +51,4 @@ Käytetään Tero Karvisen muodostamaa esimerkkiä uuden Vagrantfilen pohjana.
 		    tmaster.vm.network "private_network", ip: "192.168.12.3"
 		    tmaster.vm.hostname = "tmaster"
 	    end
-end
+    end
